@@ -115,3 +115,29 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2021-04-25 22:02:05
+
+--
+-- Table structure for table `project`
+--
+
+DROP TABLE IF EXISTS `project`;
+CREATE TABLE `project` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `project_name` varchar(60) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `status` int NOT NULL DEFAULT 0 COMMENT '0:未着手, 1:進行中, 2:完了',
+  `creater_id` int NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updater_id` int NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `project`
+--
+
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
